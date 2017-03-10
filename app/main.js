@@ -5,7 +5,13 @@ import React from 'react';
 import {render} from 'react-dom';
 const rootDocument = document.getElementById('content');
 import {Editor,EditorState} from 'draft-js';
-import './editor.css'
+import './editor.css';
+import LinkEditor from './LinkEditor';
+import EntityEditor from './EntityEditor';
+import ColorEditor from './ColorEditor';
+import MediaEditor from './MediaEditor';
+import PlantextEditor from './PlantextEditor';
+import RichEditor from './RichEditor';
 class App extends  React.Component{
     constructor(props){
         super(props);
@@ -22,14 +28,19 @@ class App extends  React.Component{
             editorState
         }=this.state;
         return (
-            <div className="RichEditor-root">
+            <div>
+                <div className="RichEditor-root">
 
-                <Editor editorState={this.state.editorState} onChange={this.handleChange} />
-              {/* <EditorState
-                   editorState={editorState}
-                   onChange={this.handleChange}
-               />*/}
+                    {/*<Editor editorState={this.state.editorState} onChange={this.handleChange} />*/}
+                    <LinkEditor/>
+                    {/* <EntityEditor/>*/}
+                    <ColorEditor/>
+                    <MediaEditor/>
+                    <PlantextEditor/>
+                </div>
+                <RichEditor/>
             </div>
+
         )
     }
 }
