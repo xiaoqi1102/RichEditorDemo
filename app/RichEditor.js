@@ -10,7 +10,7 @@ import {
 } from 'draft-js';
 
 import {Map} from 'immutable';
-
+import {stateToHTML} from 'draft-js-export-html';
 class RichEditorExample extends React.Component {
     constructor(props) {
         super(props);
@@ -54,7 +54,10 @@ class RichEditorExample extends React.Component {
             )
         );
     }
-
+    logState=()=>{
+        let content=this.state.editorState.getCurrentContent();
+        console.log(stateToHTML(content));
+    };
     render() {
         const {editorState} = this.state;
 
@@ -89,6 +92,7 @@ class RichEditorExample extends React.Component {
                         ref="editor"
                         spellCheck={true}
                     />
+                    <button onClick={this.logState}>log state </button>
                 </div>
             </div>
         );

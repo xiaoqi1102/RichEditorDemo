@@ -29,14 +29,23 @@ class App extends  React.Component{
         }=this.state;
         return (
             <div>
-                <div className="RichEditor-root">
+               {/* <div className="RichEditor-root">
 
-                    {/*<Editor editorState={this.state.editorState} onChange={this.handleChange} />*/}
-                    <LinkEditor/>
-                    {/* <EntityEditor/>*/}
-                    <ColorEditor/>
-                    <MediaEditor/>
+                    /!*<Editor editorState={this.state.editorState} onChange={this.handleChange} />*!/
+                   /!* <LinkEditor/>*!/
+                    /!* <EntityEditor/>*!/
+                  /!*
+
+                    *!/
+                </div>*/}
+                <div className="RichEditor-root">
                     <PlantextEditor/>
+                </div>
+                <div className="RichEditor-root">
+                    <ColorEditor/>
+                </div>
+                <div className="RichEditor-root">
+                    <MediaEditor/>
                 </div>
                 <RichEditor/>
             </div>

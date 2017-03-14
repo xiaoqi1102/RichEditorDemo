@@ -111,14 +111,15 @@ const ColorControls = (props) => {
     var currentStyle = props.editorState.getCurrentInlineStyle();
     return (
         <div style={styles.controls}>
-            {COLORS.map(type =>
-                <StyleButton
-                    active={currentStyle.has(type.style)}
-                    label={type.label}
-                    onToggle={props.onToggle}
-                    style={type.style}
-                />
-            )}
+            {COLORS.map((type, key)=> {
+                return <StyleButton
+                            key={key}
+                            active={currentStyle.has(type.style)}
+                            label={type.label}
+                            onToggle={props.onToggle}
+                            style={type.style}
+                        />
+            })}
         </div>
     );
 };
