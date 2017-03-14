@@ -1,6 +1,7 @@
 /**
  * Created by xiaoqi on 2017/3/10.
  */
+
 import React from 'react';
 import {render} from 'react-dom';
 const rootDocument = document.getElementById('content');
